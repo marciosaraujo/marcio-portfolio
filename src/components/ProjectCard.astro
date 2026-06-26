@@ -27,8 +27,8 @@ const { title, description, category, tech, coverImage } = project.data;
 </a>
 
 <script>
-	// Spotlight: atualiza --mx/--my conforme o mouse passa sobre os cards.
-	// Delegado no document para sobreviver às transições de página.
+	// Spotlight: update --mx/--my as the mouse moves over the cards.
+	// Delegated on document so it survives page transitions.
 	document.addEventListener('mousemove', (e) => {
 		const card = (e.target as HTMLElement)?.closest<HTMLElement>('[data-spotlight]');
 		if (!card) return;
@@ -51,7 +51,7 @@ const { title, description, category, tech, coverImage } = project.data;
 		border-radius: var(--radius);
 		transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 	}
-	/* Spotlight que segue o mouse (posição via --mx/--my no JS). */
+	/* Spotlight that follows the mouse (position set via --mx/--my in JS). */
 	.card::before {
 		content: "";
 		position: absolute;
